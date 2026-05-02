@@ -273,8 +273,7 @@ methodSelect.addEventListener("change", function () {
   if (document.getElementById("fx")) {
     methodCases();
   } else {
-    let inputs = document.querySelectorAll("#inputs-row input");
-    inputs.forEach(inp => inp.value = "");
+    // Only reset the result display, preserve matrix inputs
     reset();
   }
 });
@@ -758,34 +757,42 @@ function getMatrix() {
 // GAUSS ELIMINATION
 
 function gauss(A, B) {
-
-  let n = 3;
+  let n = A.length;
 
   for (let i = 0; i < n; i++) {
+    // Partial Pivoting: Find the largest element in the current column
+    let maxRow = i;
+    for (let k = i + 1; k < n; k++) {
+      if (Math.abs(A[k][i]) > Math.abs(A[maxRow][i])) {
+        maxRow = k;
+      }
+    }
 
+    // Swap rows in both Matrix A and Vector B
+    [A[i], A[maxRow]] = [A[maxRow], A[i]];
+    [B[i], B[maxRow]] = [B[maxRow], B[i]];
+
+    // Standard Elimination
     for (let j = i + 1; j < n; j++) {
+      if (Math.abs(A[i][i]) < 1e-10) continue; // Handle singular matrix or zero pivot
       let factor = A[j][i] / A[i][i];
-
       for (let k = i; k < n; k++) {
         A[j][k] -= factor * A[i][k];
       }
-
       B[j] -= factor * B[i];
     }
   }
 
-  let x = Array(n);
-
+  // Back Substitution
+  let x = Array(n).fill(0);
   for (let i = n - 1; i >= 0; i--) {
+    if (Math.abs(A[i][i]) < 1e-10) continue;
     let sum = B[i];
-
     for (let j = i + 1; j < n; j++) {
       sum -= A[i][j] * x[j];
     }
-
     x[i] = sum / A[i][i];
   }
-
   return x;
 }
 
@@ -793,28 +800,36 @@ function gauss(A, B) {
 // GAUSS JORDAN
 
 function gaussJordan(A, B) {
-
-  let n = 3;
+  let n = A.length;
 
   for (let i = 0; i < n; i++) {
+    // Partial Pivoting
+    let maxRow = i;
+    for (let k = i + 1; k < n; k++) {
+      if (Math.abs(A[k][i]) > Math.abs(A[maxRow][i])) {
+        maxRow = k;
+      }
+    }
+    // Swap rows
+    [A[i], A[maxRow]] = [A[maxRow], A[i]];
+    [B[i], B[maxRow]] = [B[maxRow], B[i]];
 
     let pivot = A[i][i];
+    if (Math.abs(pivot) < 1e-10) continue;
 
+    // Normalize pivot row
     for (let j = 0; j < n; j++) {
       A[i][j] /= pivot;
     }
-
     B[i] /= pivot;
 
+    // Eliminate other rows
     for (let k = 0; k < n; k++) {
       if (k !== i) {
-
         let factor = A[k][i];
-
         for (let j = 0; j < n; j++) {
           A[k][j] -= factor * A[i][j];
         }
-
         B[k] -= factor * B[i];
       }
     }
@@ -944,9 +959,9 @@ function solveLinear() {
   let result;
 
   if (method == "1") result = gauss(A_copy, B_copy);
-  else if (method == "2") result = gaussJordan(A_copy, B_copy);
+  else if (method == "2") result = lu(A_copy, B_copy);
   else if (method == "3") result = cramer(A_copy, B_copy);
-  else if (method == "4") result = lu(A_copy, B_copy);
+  else if (method == "4") result = gaussJordan(A_copy, B_copy);
 
   if (!result) {
     showError("No solution");
