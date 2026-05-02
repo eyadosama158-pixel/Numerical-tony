@@ -78,35 +78,35 @@ function changeToLinearEquation() {
                             </div>
                             <h6 class="mb-3 border-bottom pb-2">3x3 Matrix System (Ax = B)</h6> <!-- Row 1 -->
                             <div class="row g-2 mb-3">
-                                <div class="col"><input type="number" class="form-control" placeholder="a11" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a11" required>
                                 </div>
-                                <div class="col"><input type="number" class="form-control" placeholder="a12" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a12" required>
                                 </div>
-                                <div class="col"><input type="number" class="form-control" placeholder="a13" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a13" required>
                                 </div>
-                                <div class="col"><input type="number" class="form-control border-danger"
+                                <div class="col-6 col-md-3"><input type="number" class="form-control border-danger"
                                         placeholder="b1" required></div>
 
                             </div> <!-- Row 2 -->
                             <div class="row g-2 mb-3">
-                                <div class="col"><input type="number" class="form-control" placeholder="a21" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a21" required>
                                 </div>
-                                <div class="col"><input type="number" class="form-control" placeholder="a22" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a22" required>
                                 </div>
-                                <div class="col"><input type="number" class="form-control" placeholder="a23" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a23" required>
                                 </div>
-                                <div class="col"><input type="number" class="form-control border-danger"
+                                <div class="col-6 col-md-3"><input type="number" class="form-control border-danger"
                                         placeholder="b2" required></div>
 
                             </div> <!-- Row 3 -->
                             <div class="row g-2 mb-4">
-                                <div class="col"><input type="number" class="form-control" placeholder="a31" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a31" required>
                                 </div>
-                                <div class="col"><input type="number" class="form-control" placeholder="a32" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a32" required>
                                 </div>
-                                <div class="col"><input type="number" class="form-control" placeholder="a33" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a33" required>
                                 </div>
-                                <div class="col"><input type="number" class="form-control border-danger"
+                                <div class="col-6 col-md-3"><input type="number" class="form-control border-danger"
                                         placeholder="b3" required></div>
 
                             </div>
