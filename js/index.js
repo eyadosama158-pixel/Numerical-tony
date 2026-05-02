@@ -118,6 +118,7 @@ function changeToLinearEquation() {
                         </form>
                     </div>`;
   refreshInputs();
+  reset();
   methodCases();
 }
 
@@ -184,22 +185,22 @@ function getTheMethodValue() {
   return methodSelect.value;
 }
 function reset() {
-  tableBody.innerHTML = "";
-  tableHead.innerHTML = "";
-  resultBox.innerHTML =
+  if (tableBody) tableBody.innerHTML = "";
+  if (tableHead) tableHead.innerHTML = "";
+  if (resultBox) resultBox.innerHTML =
     "The calculated roots or variable values will appear here after clicking Calculate";
-  fx.value = "";
-  dfx.value = "";
-  gx.value = "";
+  if (fx) fx.value = "";
+  if (dfx) dfx.value = "";
+  if (gx) gx.value = "";
 
-  xl.value = "";
-  xu.value = "";
+  if (xl) xl.value = "";
+  if (xu) xu.value = "";
 
-  x0.value = "";
-  x1.value = "";
+  if (x0) x0.value = "";
+  if (x1) x1.value = "";
 
-  tol.value = "";
-  iter.value = "";
+  if (tol) tol.value = "";
+  if (iter) iter.value = "";
 }
 function methodCases() {
   if (!document.getElementById("fx")) return;
@@ -276,8 +277,7 @@ methodSelect.addEventListener("change", function () {
   } else {
     let inputs = document.querySelectorAll("#inputs-row input");
     inputs.forEach(inp => inp.value = "");
-    let resultBox = document.getElementById("result-box");
-    if (resultBox) resultBox.innerHTML = "The calculated roots or variable values will appear here after clicking Calculate";
+    reset();
   }
 });
 
