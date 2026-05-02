@@ -74,40 +74,38 @@ function changeToLinearEquation() {
   inputsRow.innerHTML = `  
                     <div class="tab-pane fade show active">
                         <form class="needs-validation" novalidate>
-                                <div class="invalid-feedback">Please select a method.</div>
-                            </div>
                             <h6 class="mb-3 border-bottom pb-2">3x3 Matrix System (Ax = B)</h6> <!-- Row 1 -->
                             <div class="row g-2 mb-3">
-                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a11" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a11" required oninput="validateLinearInput(this)">
                                 </div>
-                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a12" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a12" required oninput="validateLinearInput(this)">
                                 </div>
-                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a13" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a13" required oninput="validateLinearInput(this)">
                                 </div>
-                                <div class="col-6 col-md-3"><input type="number" class="form-control border-danger"
-                                        placeholder="b1" required></div>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control"
+                                        placeholder="b1" required oninput="validateLinearInput(this)"></div>
 
                             </div> <!-- Row 2 -->
                             <div class="row g-2 mb-3">
-                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a21" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a21" required oninput="validateLinearInput(this)">
                                 </div>
-                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a22" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a22" required oninput="validateLinearInput(this)">
                                 </div>
-                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a23" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a23" required oninput="validateLinearInput(this)">
                                 </div>
-                                <div class="col-6 col-md-3"><input type="number" class="form-control border-danger"
-                                        placeholder="b2" required></div>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control"
+                                        placeholder="b2" required oninput="validateLinearInput(this)"></div>
 
                             </div> <!-- Row 3 -->
                             <div class="row g-2 mb-4">
-                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a31" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a31" required oninput="validateLinearInput(this)">
                                 </div>
-                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a32" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a32" required oninput="validateLinearInput(this)">
                                 </div>
-                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a33" required>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control" placeholder="a33" required oninput="validateLinearInput(this)">
                                 </div>
-                                <div class="col-6 col-md-3"><input type="number" class="form-control border-danger"
-                                        placeholder="b3" required></div>
+                                <div class="col-6 col-md-3"><input type="number" class="form-control"
+                                        placeholder="b3" required oninput="validateLinearInput(this)"></div>
 
                             </div>
 
@@ -131,47 +129,47 @@ function changeToRootEquation() {
                                 <option value="5" id="option-5">Secant Method</option>`;
   inputsRow.innerHTML = `  <div class="col-md-12" id="fx-container">
                             <label class="form-label" id="fx-label">Function f(x)</label>
-                            <input type="text" class="form-control" id="fx" required>
+                            <input type="text" class="form-control" id="fx" required oninput="clearError(this)">
                         </div>
 
                         <div class="col-md-12" id="dfx-container">
                             <label class="form-label" id="dfx-label">Derivative f'(x)</label>
-                            <input type="text" class="form-control" id="dfx">
+                            <input type="text" class="form-control" id="dfx" oninput="clearError(this)">
                         </div>
 
                         <div class="col-md-12" id="gx-container">
                             <label class="form-label" id="gx-label">Function g(x)</label>
-                            <input type="text" class="form-control" id="gx">
+                            <input type="text" class="form-control" id="gx" oninput="clearError(this)">
                         </div>
 
                         <div class="col-md-6" id="xl-container">
                             <label class="form-label" id="xl-label">Lower Bound xl</label>
-                            <input type="number" step="any" class="form-control" id="xl">
+                            <input type="number" step="any" class="form-control" id="xl" oninput="validateLinearInput(this)">
                         </div>
 
                         <div class="col-md-6" id="xu-container">
                             <label class="form-label" id="xu-label">Upper Bound xu</label>
-                            <input type="number" step="any" class="form-control" id="xu">
+                            <input type="number" step="any" class="form-control" id="xu" oninput="validateLinearInput(this)">
                         </div>
 
                         <div class="col-md-6" id="x0-container">
                             <label class="form-label" id="x0-label">Initial Guess x0</label>
-                            <input type="number" step="any" class="form-control" id="x0">
+                            <input type="number" step="any" class="form-control" id="x0" oninput="validateLinearInput(this)">
                         </div>
 
                         <div class="col-md-6" id="x1-container">
                             <label class="form-label" id="x1-label">Initial Guess x1</label>
-                            <input type="number" step="any" class="form-control" id="x1">
+                            <input type="number" step="any" class="form-control" id="x1" oninput="validateLinearInput(this)">
                         </div>
 
                         <div class="col-md-6" id="tol-container">
                             <label class="form-label" id="tol-label">Tolerance</label>
-                            <input type="number" step="any" min="0" class="form-control" id="tol" required>
+                            <input type="number" step="any" min="0" class="form-control" id="tol" required oninput="validateLinearInput(this)">
                         </div>
 
                         <div class="col-md-6" id="iter-container">
                             <label class="form-label" id="iter-label">Max Iterations</label>
-                            <input type="number" step="1" min="1" class="form-control" id="iter" required>
+                            <input type="number" step="1" min="1" class="form-control" id="iter" required oninput="validateLinearInput(this)">
                         </div>
 
                         <div class="col-md-12 d-flex justify-content-center" id="btn-container">
@@ -535,9 +533,9 @@ function validateInputs() {
   // clear old errors
   [fx, dfx, gx, xl, xu, x0, x1, tol, iter].forEach(clearError);
 
-  if (tolValue === "" && iterValue === "") {
-    setError(tol, "Enter tolerance or iterations");
-    setError(iter, "Enter tolerance or iterations");
+  if ((tolValue === "" || isNaN(tolValue)) && (iterValue === "" || isNaN(iterValue))) {
+    setError(tol, "Enter valid tolerance or iterations");
+    setError(iter, "Enter valid tolerance or iterations");
     isValid = false;
   }
 
@@ -547,12 +545,12 @@ function validateInputs() {
       setError(fx, "fx is required");
       isValid = false;
     }
-    if (xl.value.trim() === "") {
-      setError(xl, "xl is required");
+    if (xl.value.trim() === "" || isNaN(xl.value)) {
+      setError(xl, "xl is required as a number");
       isValid = false;
     }
-    if (xu.value.trim() === "") {
-      setError(xu, "xu is required");
+    if (xu.value.trim() === "" || isNaN(xu.value)) {
+      setError(xu, "xu is required as a number");
       isValid = false;
     }
   }
@@ -563,8 +561,8 @@ function validateInputs() {
       setError(gx, "g(x) is required");
       isValid = false;
     }
-    if (x0.value.trim() === "") {
-      setError(x0, "x0 is required");
+    if (x0.value.trim() === "" || isNaN(x0.value)) {
+      setError(x0, "x0 is required as a number");
       isValid = false;
     }
   }
@@ -579,8 +577,8 @@ function validateInputs() {
       setError(dfx, "f'(x) is required");
       isValid = false;
     }
-    if (x0.value.trim() === "") {
-      setError(x0, "x0 is required");
+    if (x0.value.trim() === "" || isNaN(x0.value)) {
+      setError(x0, "x0 is required as a number");
       isValid = false;
     }
   }
@@ -591,12 +589,12 @@ function validateInputs() {
       setError(fx, "fx is required");
       isValid = false;
     }
-    if (x0.value.trim() === "") {
-      setError(x0, "x0 is required");
+    if (x0.value.trim() === "" || isNaN(x0.value)) {
+      setError(x0, "x0 is required as a number");
       isValid = false;
     }
-    if (x1.value.trim() === "") {
-      setError(x1, "x1 is required");
+    if (x1.value.trim() === "" || isNaN(x1.value)) {
+      setError(x1, "x1 is required as a number");
       isValid = false;
     }
   }
@@ -722,15 +720,29 @@ function GetTheResult() {
 // LINEAR METHODS ONLY
 // ==========================
 
+function validateLinearInput(input) {
+  let value = input.value.trim();
+  if (value === "" || isNaN(value)) {
+    setError(input, "Enter a valid number");
+    return false;
+  } else {
+    clearError(input);
+    return true;
+  }
+}
+
+function validateLinearInputs() {
+  let inputs = document.querySelectorAll("#inputs-row input");
+  let isValid = true;
+  inputs.forEach(inp => {
+    if (!validateLinearInput(inp)) isValid = false;
+  });
+  return isValid;
+}
+
 function getMatrix() {
   let inputs = document.querySelectorAll("#inputs-row input");
-
-  let values = Array.from(inputs).map(inp => Number(inp.value));
-
-  // if Input Is Empty
-  if (values.slice(0, 12).some(v => isNaN(v))) {
-    return null;
-  }
+  let values = Array.from(inputs).map(inp => parseFloat(inp.value.trim()));
 
   return {
     A: [
@@ -917,12 +929,11 @@ function showResult(msg) {
 }
 
 function solveLinear() {
-  let data = getMatrix();
-
-  if (!data) {
-    showError("Enter valid matrix values");
+  if (!validateLinearInputs()) {
+    showError("Please enter valid numeric values for all fields.");
     return;
   }
+  let data = getMatrix();
 
   let method = document.getElementById("method-select").value;
 
