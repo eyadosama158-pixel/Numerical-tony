@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    /* color: white; */
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body{
+    /* background-color: red; */
+      /* background: #EEAECA;
+background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); */
+}
+/* Start Numerical Nav Sectoion  */
+.big-container .icon i{
+    color: rgba(255, 255, 6, 0.994);
+}
+.navbar {
+    background-color: #b99cc8;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: 20px;
+}
+.navbar .nav-link:hover{
+    color: black;
+}
+.navbar ul li a{
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+/* End Numerical Nav Section  */
+/* Start Numerical Card Section  */
+.big-container{
+  background: #EEAECA;
+background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    padding-bottom:50px;
+    padding-top:50px;
+}
+.ctr1{
+    /* background-color: blue; */
+    /* padding-top: 50%; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+       background: #ebe0ff;
+        color: black;
+    /* background-color: ; */
+    /* width: 70%; */
+    position: relative;
+}
+.card .card-body{
+    /* display: flex */
+
+    color: black;
+}
+.card .card-body .head{
+}
+.card .card-body .icon{
+    /* background-color: red; */
+    position: relative;
+    top: 4px;
+    right: 8px;
+}
+
+.icon i{
+    font-size: 30px;
+}
+.btn-group{
+    background-color: blue;
+    margin-left: 125px;
+}
+.chooser h3{
+    margin-right: 50px;
+}
+/* End Numerical Card Section */
+
+/* Res Container */
+.res{
+    background-color: white;
+}
+
+.input-error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
