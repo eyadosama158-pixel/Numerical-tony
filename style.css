@@ -50,17 +50,26 @@ background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 23
     justify-content: center;
     align-items: center;
 }
-.card{
-       background: #ebe0ff;
-        color: black;
-    /* background-color: ; */
-    /* width: 70%; */
-    position: relative;
-}
-.card .card-body{
-    /* display: flex */
-
+.card {
+    background: #ebe0ff;
     color: black;
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    min-height: 550px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: min-height 0.3s ease;
+}
+
+.card .card-body {
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.res-container {
+    min-height: 400px;
 }
 .card .card-body .head{
 }
